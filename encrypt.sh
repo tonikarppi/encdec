@@ -9,7 +9,7 @@ if [[ ! -f "$input_file" ]]; then
   exit 1
 fi
 
-output_file="$input_file.enc"
+output_file="$input_file.gpg"
 
 if [[ -w "$output_file" ]]; then
   echo "The file $output_file exists, overwrite? (y/n)"
@@ -22,6 +22,6 @@ if [[ -w "$output_file" ]]; then
 fi
 
 echo "Encrypting..."
-openssl enc -aes-256-cbc -md sha512 -pbkdf2 -iter 1000 -salt -in "$input_file" -out "$output_file"
+cat $input_file | gpg -c -o $output_file
 echo "Saved encrypted $input_file to $output_file."
 
