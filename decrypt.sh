@@ -27,7 +27,6 @@ if [[ -w "$output_file" ]]; then
 fi
 
 echo "Decrypting..."
-#openssl enc -d -aes-256-cbc -md sha512 -pbkdf2 -iter 1000 -salt -in "$input_file" -out "$output_file"
 gpg -d $input_file > $output_file
 echo "Saved decrypted $input_file to $output_file."
 
