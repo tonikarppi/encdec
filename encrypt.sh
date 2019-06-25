@@ -22,6 +22,6 @@ if [[ -w "$output_file" ]]; then
 fi
 
 echo "Encrypting..."
-cat $input_file | gpg -c -o $output_file
+cat $input_file | gpg -c > $output_file
 echo "Saved encrypted $input_file to $output_file."
 
