@@ -17,7 +17,7 @@ fi
 output_file=$(basename "$input_file" .enc)
 
 if [ -w "$output_file" ]; then
-  echo "The file $output_file exists, overwrite? y/n"
+  echo "The file $output_file exists, overwrite? (y/n)"
   read answer
 
   if [[ ! "$answer" = [yY] ]]; then
