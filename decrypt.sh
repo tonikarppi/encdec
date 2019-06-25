@@ -4,6 +4,11 @@ set -e
 
 input_file="$1"
 
+if [[ ! -f "$input_file" ]]; then
+  echo "File $input_file could not be found, aborting."
+  exit 1
+fi
+
 if [[ "$input_file" != *.enc ]]; then
   echo "Error: expected file to have extension 'enc'."
   exit 1
