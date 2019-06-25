@@ -3,6 +3,12 @@
 set -e
 
 input_file="$1"
+
+if [[ ! -f "$input_file" ]]; then
+  echo "File $input_file could not be found, aborting."
+  exit 1
+fi
+
 output_file="$input_file.enc"
 
 if [[ -w "$output_file" ]]; then
