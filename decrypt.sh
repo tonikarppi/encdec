@@ -2,20 +2,20 @@
 
 set -e
 
-input_file=$1
+input_file="$1"
 
 if [[ "$input_file" != *.enc ]]; then
   echo "Error: expected file to have extension 'enc'."
   exit 1
 fi
 
-output_file=$(basename $input_file .enc)
+output_file=$(basename "$input_file" .enc)
 
-if [ -w $output_file ]; then
+if [ -w "$output_file" ]; then
   echo "The file $output_file exists, overwrite? y/n"
   read answer
 
-  if [[ ! $answer = [yY] ]]; then
+  if [[ ! "$answer" = [yY] ]]; then
     echo "Aborting."
     exit 0
   fi
