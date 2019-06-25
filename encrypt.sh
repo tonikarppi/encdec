@@ -22,6 +22,6 @@ if [[ -w "$output_file" ]]; then
 fi
 
 echo "Encrypting..."
-openssl enc -aes-256-cbc -md sha512 -pbkdf2 -iter 1000 -salt -in "$1" -out "$1.enc"
+openssl enc -aes-256-cbc -md sha512 -pbkdf2 -iter 1000 -salt -in "$input_file" -out "$output_file"
 echo "Saved encrypted $input_file to $output_file."
 
