@@ -5,7 +5,7 @@ set -e
 input_file="$1"
 output_file="$input_file.enc"
 
-if [ -w "$output_file" ]; then
+if [[ -w "$output_file" ]]; then
   echo "The file $output_file exists, overwrite? y/n"
   read answer
 
