@@ -16,7 +16,7 @@ fi
 
 output_file=$(basename "$input_file" .enc)
 
-if [ -w "$output_file" ]; then
+if [[ -w "$output_file" ]]; then
   echo "The file $output_file exists, overwrite? (y/n)"
   read answer
 
