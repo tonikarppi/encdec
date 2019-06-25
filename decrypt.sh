@@ -16,17 +16,7 @@ fi
 
 output_file=$(basename "$input_file" .gpg)
 
-if [[ -w "$output_file" ]]; then
-  echo "The file $output_file exists, overwrite? (y/n)"
-  read answer
-
-  if [[ ! "$answer" = [yY] ]]; then
-    echo "Aborting."
-    exit 0
-  fi
-fi
-
 echo "Decrypting..."
-gpg -d $input_file > $output_file
+gpg -d -o "$output_file" "$input_file" 
 echo "Saved decrypted $input_file to $output_file."
 
